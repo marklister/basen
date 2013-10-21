@@ -1,0 +1,12 @@
+//working with Hex / Decimal / Binary
+"255".d 
+"ff".h
+"10".d * 2
+"10101010".b xor "01010101".b
+"2".d + "f".h
+
+//Crypto stuff
+"Hello".getBytes.h
+"Hello".getBytes.sha256.h
+val encrypted="Hello World".getBytes.pkcs5Pad.aesEncrypt("my key".getBytes.pkcs5Pad)
+encrypted.aesDecrypt("my key".getBytes.pkcs5Pad).h.toByteArray.map(_.toChar)
