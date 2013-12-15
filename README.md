@@ -11,13 +11,32 @@ Provided under the Apache 2 Licence.  Please don't add exercise specific code if
 
 ## How to use it
 
-### SBT
-
-In progress...
-
 ### GIT
 
 Simply cloning the project will give you a working environment.  Run ```sbt console``` from the cloned directory.
+
+### Scaladoc
+
+[Browse Scaladoc on line](http://marklister.github.io/basen/target/scala-2.10/api/#org.catch22.package)
+
+### High level concept
+
+Strings are implicitly converted into BaseN objects.  You invoke the `h` method to convert from Hex `d` to convert from Decimal and `b` from binary
+
+Byte arrays are implicitly converted into Objects of type CryptoOps.
+
+You can add subtract multiply divide, xor etc any of your BaseN objects.  You can convert them to hex decimal binary or BigInts.
+
+You can encrypt, hash, decrypt, pkspad your converted byte arrays.
+
+The REPL tab key might be useful.  
+
+If you are running from the REPL imports are handled automatically.  If you are writing a program then include:
+
+``` scala
+import org.catch22.BaseN._
+import org.catch22.CryptoOps._
+```
 
 ### REPL Session
 
@@ -63,3 +82,4 @@ res7: Array[Char] = Array(H, e, l, l, o,  , W, o, r, l, d, ?, ?, ?, ?, ?)
 
 scala> 
 ```
+
