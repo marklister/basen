@@ -67,21 +67,26 @@ res4: org.github.marklister.basen.BaseN = 017 [base: 10]
 
 scala> 
 
+scala> //Convert hex to binary
+
+scala> "ff".h.b
+res5: org.github.marklister.basen.Binary = 00000000:11111111 [base: 2]
+
+scala> 
+
 scala> //Crypto stuff
 
 scala> "Hello".getBytes.h
-res5: org.github.marklister.basen.Hex = 48:65:6c:6c:6f [base: 16]
+res6: org.github.marklister.basen.Hex = 48:65:6c:6c:6f [base: 16]
 
 scala> "Hello".getBytes.sha256.h
-res6: org.github.marklister.basen.Hex = 18:5f:8d:b3:22:71:fe:25:f5:61:a6:fc:93:8b:2e:26:43:06:ec:30:4e:da:51:80:07:d1:76:48:26:38:19:69 [base: 16]
+res7: org.github.marklister.basen.Hex = 18:5f:8d:b3:22:71:fe:25:f5:61:a6:fc:93:8b:2e:26:43:06:ec:30:4e:da:51:80:07:d1:76:48:26:38:19:69 [base: 16]
 
-scala> val encrypted="Hello World".getBytes.pkcs5Pad.aesEncrypt("my key".getByte 
-s.pkcs5Pad)
+scala> val encrypted="Hello World".getBytes.pkcs5Pad.aesEncrypt("my key".getBytes.pkcs5Pad)
 encrypted: Array[Byte] = Array(-80, 101, 29, 31, 83, -62, 3, 95, -61, -73, -17, -45, -38, -83, 78, 22)
 
-scala> encrypted.aesDecrypt("my key".getBytes.pkcs5Pad).h.toByteArray.map(_.toCh 
-ar)
-res7: Array[Char] = Array(H, e, l, l, o,  , W, o, r, l, d, ?, ?, ?, ?, ?)
+scala> encrypted.aesDecrypt("my key".getBytes.pkcs5Pad).h.toByteArray.map(_.toChar)
+res8: Array[Char] = Array(H, e, l, l, o,  , W, o, r, l, d, ?, ?, ?, ?, ?)
 
 ```
 

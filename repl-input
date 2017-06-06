@@ -5,6 +5,9 @@
 "10101010".b xor "01010101".b
 "2".d + "f".h
 
+//Convert hex to binary
+"ff".h.b
+
 //Crypto stuff
 "Hello".getBytes.h
 "Hello".getBytes.sha256.h
