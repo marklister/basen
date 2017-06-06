@@ -80,8 +80,8 @@ object BaseN {
   implicit def StringToDecimal(s: String): Decimal = new Decimal(BigInt(s, 10))
 
   implicit def BaseNToHex(x: BaseN): Hex = new Hex(x.underlying)
-  implicit def BaseNToHDecimal(x: BaseN): Decimal = new Decimal(x.underlying)
-  implicit def BaseNToBinary(x: BaseN): BaseN = new Binary(x.underlying)
+  implicit def BaseNToDecimal(x: BaseN): Decimal = new Decimal(x.underlying)
+  implicit def BaseNToBinary(x: BaseN): Binary = new Binary(x.underlying)
 
   implicit def IntToBaseN(i: Int): BaseN = new BaseN(BigInt(i), 16) // to support 0xff etc
   implicit def BaseNToInt(n: BaseN): Int = n.toInt
