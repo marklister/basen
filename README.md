@@ -11,6 +11,10 @@ The library was developed to complete Dan Boneh's Cryptography I course on Cours
 
 Provided under the Apache 2 Licence.  Please don't add exercise specific code if you use it for the same purpose.
 
+## What the masses are saying about it
+
+@marklister Thanks a lot for your tool that saved me a lot of time during the course and allowed me to focus purely on cryptography during assignments.  See the pull request #1 and #3 for details.
+
 ## How to use it
 
 ### GIT
