@@ -44,7 +44,7 @@ sealed class BaseN(val underlying: BigInt, val baseN: Int)  {
   def |(that: BaseN) = BaseN(underlying.|(that.underlying), baseN)
   def mod(that:BaseN)= BaseN(underlying.mod(that.underlying),baseN)
   def modInverse(that:BaseN)=BaseN(underlying.modInverse(that.underlying),baseN)
-  def modPow(that:BaseN,p:Int)=BaseN(underlying.modPow(that.underlying,p),baseN)
+  def modPow(that:BaseN,p:BaseN)=BaseN(underlying.modPow(that.underlying,p.underlying),baseN)
   
   def <<(n: Int) = BaseN(underlying.<<(n), baseN)
   def >>(n: Int) = BaseN(underlying.>>(n), baseN)
@@ -84,6 +84,7 @@ object BaseN {
   implicit def BaseNToBinary(x: BaseN): BaseN = new Binary(x.underlying)
 
   implicit def IntToHex(i: Int): Hex = new Hex(BigInt(i)) // to support 0xff etc
+  implicit def IntToDecimal(i: Int): Decimal = new Decimal(BigInt(i))
   implicit def BaseNToInt(n: BaseN): Int = n.toInt
 
   implicit def BigIntToBinary(b: BigInt): Binary = new Binary(b)
