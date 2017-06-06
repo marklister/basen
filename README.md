@@ -36,52 +36,52 @@ The REPL tab key might be useful.
 If you are running from the REPL imports are handled automatically.  If you are writing a program then include:
 
 ``` scala
-import org.catch22.BaseN._
-import org.catch22.CryptoOps._
+import org.github.marklister.basen.BaseN._
+import org.github.marklister.basen.CryptoOps._
 ```
 
 ### REPL Session
 
 ```
-import org.catch22.BaseN._
-import org.catch22.CryptoOps._
-Welcome to Scala version 2.10.3 (OpenJDK Server VM, Java 1.7.0_25).
-Type in expressions to have them evaluated.
-Type :help for more information.
+Welcome to Scala 2.12.2 (OpenJDK 64-Bit Server VM, Java 1.8.0_121).
+Type in expressions for evaluation. Or try :help.
 
 scala> //working with Hex / Decimal / Binary
+import org.github.marklister.basen.BaseN._
+import org.github.marklister.basen.CryptoOps._
 
 scala> "255".d 
-res0: org.catch22.Decimal = 000:255 [base: 10]
+res0: org.github.marklister.basen.Decimal = 000:255 [base: 10]
 
 scala> "ff".h
-res1: org.catch22.Hex = 00:ff [base: 16]
+res1: org.github.marklister.basen.Hex = 00:ff [base: 16]
 
 scala> "10".d * 2
-res2: org.catch22.BaseN = 020 [base: 10]
+res2: org.github.marklister.basen.BaseN = 020 [base: 10]
 
 scala> "10101010".b xor "01010101".b
-res3: org.catch22.BaseN = 00000000:11111111 [base: 2]
+res3: org.github.marklister.basen.BaseN = 00000000:11111111 [base: 2]
 
 scala> "2".d + "f".h
-res4: org.catch22.BaseN = 017 [base: 10]
+res4: org.github.marklister.basen.BaseN = 017 [base: 10]
 
 scala> 
 
 scala> //Crypto stuff
 
 scala> "Hello".getBytes.h
-res5: org.catch22.Hex = 48:65:6c:6c:6f [base: 16]
+res5: org.github.marklister.basen.Hex = 48:65:6c:6c:6f [base: 16]
 
 scala> "Hello".getBytes.sha256.h
-res6: org.catch22.Hex = 18:5f:8d:b3:22:71:fe:25:f5:61:a6:fc:93:8b:2e:26:43:06:ec:30:4e:da:51:80:07:d1:76:48:26:38:19:69 [base: 16]
+res6: org.github.marklister.basen.Hex = 18:5f:8d:b3:22:71:fe:25:f5:61:a6:fc:93:8b:2e:26:43:06:ec:30:4e:da:51:80:07:d1:76:48:26:38:19:69 [base: 16]
 
-scala> val encrypted="Hello World".getBytes.pkcs5Pad.aesEncrypt("my key".getBytes.pkcs5Pad)
+scala> val encrypted="Hello World".getBytes.pkcs5Pad.aesEncrypt("my key".getByte 
+s.pkcs5Pad)
 encrypted: Array[Byte] = Array(-80, 101, 29, 31, 83, -62, 3, 95, -61, -73, -17, -45, -38, -83, 78, 22)
 
-scala> encrypted.aesDecrypt("my key".getBytes.pkcs5Pad).h.toByteArray.map(_.toChar)
+scala> encrypted.aesDecrypt("my key".getBytes.pkcs5Pad).h.toByteArray.map(_.toCh 
+ar)
 res7: Array[Char] = Array(H, e, l, l, o,  , W, o, r, l, d, ?, ?, ?, ?, ?)
 
-scala> 
 ```
 
