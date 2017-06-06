@@ -1,16 +1,14 @@
 name := "BaseN"
 
-organization :="org.catch22"
+organization :="org.github.marklister.basen"
 
 publishTo := Some(Resolver.file("file", new File("src/site")))
 
 initialCommands in console := """
-  import org.catch22.BaseN._
-  import org.catch22.CryptoOps._
+  import org.github.marklister.basen.BaseN._
+  import org.github.marklister.basen.CryptoOps._
   """
 
-scalaVersion:="2.10.3"
+scalaVersion:="2.12.2"
 
-crossScalaVersions := Seq("2.10.3")
-
-version := "1.0"
+version := "1.01"

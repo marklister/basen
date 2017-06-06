@@ -1,12 +1,12 @@
 /**
  * Scala hex / decimal binary calculator
- * (c) Mark Lister 2012 - 2013
+ * (c) Mark Lister 2012 - 2017
  * Licence Apache 2.
  *
  * CryptoOps is a sort of "RichByteArray" for Crypto primitives
  */
 
- package org.catch22
+ package org.github.marklister.basen
  
  import java.security.MessageDigest
  import javax.crypto.Cipher

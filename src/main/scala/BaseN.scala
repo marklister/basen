@@ -1,9 +1,9 @@
 /**
  * Scala hex / decimal binary calculator
- * (c) Mark Lister 2012 - 2013
+ * (c) Mark Lister 2012 - 2017
  * Licence Apache 2.
  */
-package org.catch22
+package org.github.marklister.basen
 
 import scala.language.implicitConversions
 
@@ -91,13 +91,6 @@ object BaseN {
   implicit def BigIntToDecimal(b: BigInt): Decimal = new Decimal(b)
   implicit def ArrayByteToHex(ba: Array[Byte]): Hex = new Hex(BigInt(ba))
   implicit def BaseNToSeqByte(bn:BaseN):Seq[Byte]=bn.toByteArray.toSeq
-  
-  //implicit def HexToBinary (h:Hex):Binary=new Binary(h.underlying)
-  //implicit def HexToDecimal (h:Hex):Decimal=new Decimal(h.underlying)
-  //implicit def DecimalToHex (d:Decimal):Hex=new Hex(d.underlying)
-  //implicit def DecimalToBinary (d:Decimal):Binary=new Binary(d.underlying)
-  //implicit def BinaryToHex (b:Binary):Hex=new Hex(b.underlying)
-  //implicit def BinaryToDecimal (b:Binary):Decimal=new Decimal(b.underlying)
 
 }
 
