@@ -22,6 +22,8 @@ Provided under the Apache 2 Licence.  Please don't add exercise specific code if
 Simply cloning the project, installing a jdk and sbt will give you a working environment.  Run ```sbt console``` 
 from the cloned directory.  ```sbt run``` will activate the improved ammonite REPL.
 
+To use as a library execute ```sbt publishLocal``` 
+
 ### Scaladoc
 
 [Browse Scaladoc on line](http://marklister.github.io/basen/target/scala-2.10/api/#org.catch22.package)
