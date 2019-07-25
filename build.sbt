@@ -9,6 +9,6 @@ initialCommands in console := """
   import org.github.marklister.basen.CryptoOps._
   """
 
-scalaVersion:="2.12.2"
+scalaVersion:="2.13.0"
 
-version := "1.01"
+version := "1.02"
