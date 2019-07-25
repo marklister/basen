@@ -12,3 +12,5 @@ initialCommands in console := """
 scalaVersion:="2.13.0"
 
 version := "1.02"
+
+libraryDependencies += "com.lihaoyi" % "ammonite" % "1.6.9"  cross CrossVersion.full

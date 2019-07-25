@@ -19,7 +19,8 @@ Provided under the Apache 2 Licence.  Please don't add exercise specific code if
 
 ### GIT
 
-Simply cloning the project will give you a working environment.  Run ```sbt console``` from the cloned directory.
+Simply cloning the project, installing a jdk and sbt will give you a working environment.  Run ```sbt console``` 
+from the cloned directory.  ```sbt run``` will activate the improved ammonite REPL.
 
 ### Scaladoc
 
